@@ -40,7 +40,8 @@ conn.delete_table()
 conn.create_table()
 
 # Open the file
-file_obj = open("book.csv")
+file_name = "sample.csv"
+file_obj = open(file_name)
 
 # Reading the content of file
 read_content = csv.reader(file_obj)
@@ -57,6 +58,7 @@ for content in read_content:
     entity = content[0]
     instruction = content[1]
     out_values = settle_trade(settlement_date, price, units, agreed_fx, currency)
+    # Inserting the final settlement data
     conn.insert_data(entity, instruction, out_values[0], out_values[1])
 
 # Show the report now

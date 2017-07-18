@@ -35,11 +35,11 @@ class ReportCreation:
         result = cursor.execute(sql_income_query)
         count = 1
         print "\n"
-        print "----------- Ranking for Incoming Amount on %s --------------" % date
+        print "----------- Ranking for Incoming Amount --------------"
         for i in result.fetchall():
             print "Rank %s - Entity %s" % (count, i[1])
             count += 1
-        print "-------------------------------------------------------------------"
+        print "------------------------------------------------------"
 
     def return_outgoing_ranking(self, date=None):
         conn_obj = db_creation.Connection()
@@ -51,11 +51,11 @@ class ReportCreation:
         result = cursor.execute(sql_outgoing_query)
         count = 1
         print "\n"
-        print "----------- Ranking for Outgoing Amount on %s --------------" % date
+        print "----------- Ranking for Outgoing Amount --------------"
         for i in result.fetchall():
             print "Rank %s - Entity %s" % (count, i[1])
             count += 1
-        print "--------------------------------------------------------------------"
+        print "------------------------------------------------------"
 
     def return_entity_ranking(self, date=None):
         self.return_incoming_ranking(date)
