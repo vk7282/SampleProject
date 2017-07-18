@@ -73,5 +73,5 @@ report_obj.return_outgoing_data()
 # Report 3 - Ranking based on entities on outgoing & incoming amount
 report_obj.return_entity_ranking()
 
-
-
+# Close the database connection
+conn.close_connection()
